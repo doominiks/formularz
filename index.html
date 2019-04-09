@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+
+    <title>Rockon</title>
+</head>
+
+<body class="body">
+    <div class="wrapper">
+        <img src="images/logo_copy.png" alt="background" class="wrapper__background wrapper__background--logo">
+        <img src="images/bgc-left.png" alt="background" class="wrapper__background wrapper__background--left">
+        <header class="header sections">
+            <div class="header__container">
+                <h1 class="header__title--headline">welcome aboard</h1>
+                <h2 class="header__title--subline">step inside for a unique experience.</h2>
+                <h3 class="header__paragraph header__paragraph--white">We're not just showcasing the very latest in
+                    window design and
+                    technology. We're bringing it alite, for you to touch, try, see and hear.</h3>
+                <h3 class="header__paragraph header__paragraph--orange">It's interactive, surprising and on its way to
+                    you soon!</h3>
+            </div>
+            <img src="images/logo.png" alt="Header Logo" class="header__logo">
+        </header>
+        <main class="main">
+            <form class="info-form" name="info">
+                <input type="text" class="info-form__input info-form__input--name" placeholder="name">
+                <div class="info-form__container">
+                    <select class="info-form__select" name="occupation">
+                        <option value="0">occupation*</option>
+                        <option>Developer</option>
+                        <option>Manager</option>
+                        <option>Dentist</option>
+                    </select>
+                </div>
+                <input type="tel" class="info-form__input info-form__input--mobile" placeholder="mobile" name="mobile">
+                <input type="email" class="info-form__input info-form__input--email" placeholder="email">
+                <div class="info-form__container">
+                    <select class="info-form__select info-form__select--city" name="city">
+                        <option>NEAREST CITY*</option>
+                        <option>Warsaw</option>
+                        <option>Lublin</option>
+                        <option>Cracow</option>
+                    </select>
+                </div>
+                <div class="checkboxes">
+                    <label class="checkboxes__label">I'm interested in dakea roadshow
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkboxes__label">I'm interested in dakea products
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkboxes__label">I'm looking for a smart offer
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <button class="info-form__button" type=“submit”><i class=" fas fa-arrow-right fa-3x" "></i></button>
+            </form>
+            <img src=" images/map.png" alt="Map" class="main__image">
+        </main>
+        <footer class="footer">
+            <img src="images/footer.png" alt="footer image">
+            <p class="footer__paragraph">for more details pls call <span class="footer__span">0 20 3598 1165</span>
+            </p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

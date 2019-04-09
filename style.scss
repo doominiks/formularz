@@ -1,0 +1,418 @@
+$orangeColor: #f8981d;
+
+@mixin flex($justify) {
+    display: flex;
+    justify-content: $justify;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.wrapper {
+    margin: 0 auto;
+    background: url('images/background.jpg');
+    background-position: center;
+    max-width: 1170px;
+    background-size: cover;
+    position: relative;
+    color: #ffffff;
+    min-height: 621px;
+
+
+    .wrapper__background {
+        position: absolute;
+        max-width: 100%;
+
+    }
+
+    .wrapper__background--logo {
+        top: 23%;
+        left: 54%;
+    }
+
+    .wrapper__background--left {
+        left: 0;
+        top: 30%;
+    }
+}
+
+
+.header {
+    @include flex(space-between);
+    padding: 20px;
+
+
+    &__container {
+        text-transform: uppercase;
+        width: 550px;
+    }
+
+    &__title--headline {
+        font-size: 5.6rem;
+        color: $orangeColor;
+        font-weight: 900;
+        line-height: 27.4px;
+    }
+
+    &__title--subline {
+        color: #ffffff;
+        font-size: 2.6rem;
+        padding-top: 10px;
+    }
+
+    &__paragraph {
+        font-size: 1.2rem;
+        font-weight: 300;
+        line-height: 14px;
+    }
+
+    &__paragraph--white {
+        padding-top: 20px;
+        opacity: 0.7;
+    }
+
+    &__paragraph--orange {
+        padding-top: 20px;
+        color: $orangeColor;
+    }
+
+    &__logo {
+        height: 92px;
+        z-index: 1;
+    }
+}
+
+.main {
+    @include flex(space-between);
+    padding: 20px;
+
+
+    .info-form {
+        flex-basis: 70%;
+        @include flex(space-between);
+        border: 6px solid transparent;
+        border-image-source: url("images/border.png");
+        border-image-slice: 6 6;
+        border-image-repeat: round;
+        height: 282px;
+        position: relative;
+        flex-wrap: wrap;
+        padding: 30px 40px 0 40px;
+
+
+        &__button {
+            position: absolute;
+            bottom: -60px;
+            right: 30px;
+            width: 57px;
+            height: 57px;
+            background-color: #f8981d;
+            border-style: none;
+            cursor: pointer;
+
+        }
+
+        &__input,
+        &__container {
+            width: 48%;
+            height: 50px;
+            background: transparent;
+            border: 1px solid #f8981d;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+            border-radius: 0;
+            -webkit-appearance: none;
+        }
+
+        &__input {
+            padding-left: 20px;
+        }
+
+        &__select {
+            text-transform: uppercase;
+            height: 50px;
+            width: 100%;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+            border-style: none;
+            -webkit-appearance: none;
+            padding-left: 20px;
+        }
+
+        &__container {
+            position: relative;
+        }
+
+        &__container:after {
+            content: url('images/arrow-down.png');
+            position: absolute;
+            width: 11px;
+            height: 20px;
+            top: 17px;
+            right: 20px;
+        }
+
+        &__select:after {
+            content: 'asda';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            top: 0;
+            right: 0;
+        }
+
+        input::placeholder,
+        select::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+        }
+
+        .checkboxes {
+            padding-top: 10px;
+            width: 100%;
+            @include flex(space-between);
+
+            &__label {
+                display: block;
+                position: relative;
+                padding-left: 20px;
+                cursor: pointer;
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+                opacity: 0.8;
+            }
+
+            &__label input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+
+            }
+
+            .checkmark {
+                position: absolute;
+                top: 2px;
+                left: 0;
+                height: 10px;
+                width: 10px;
+                background-color: transparent;
+                border: 1px solid #f8981d;
+            }
+
+            &__label:hover input~.checkmark {
+                background-color: #ccc;
+            }
+
+            &__label input:checked~.checkmark {
+                background-color: #f8981d;
+            }
+
+            .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+
+            &__label input:checked~.checkmark:after {
+                display: block;
+            }
+
+        }
+
+    }
+
+
+    .info-form:after {
+        content: 'Interested?';
+        text-transform: uppercase;
+        font-size: 3.7rem;
+        color: $orangeColor;
+        font-weight: 900;
+        position: absolute;
+        left: 35px;
+        top: -25px;
+    }
+
+    &__image {
+        width: 230px;
+        height: 330px;
+        padding-right: 40px;
+        z-index: 1;
+        padding-left: 20px;
+    }
+
+}
+
+
+.footer {
+    width: 100%;
+    height: 41px;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: 40px;
+
+    }
+
+    &__paragraph {
+        position: absolute;
+        top: 2px;
+        right: 21px;
+        font-size: 1.2rem;
+        line-height: 35px;
+        text-transform: uppercase;
+
+    }
+
+    &__span {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .main {
+        font-size: 10rem;
+
+        .info-form:after {
+            font-size: 3rem;
+            top: -20px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .main {
+        font-size: 10rem;
+
+        .info-form:after {
+            font-size: 2.4rem;
+            top: -20px;
+            left: 18px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+
+        // overflow-x: hidden;
+        &__background--logo,
+        &__background--left {
+            display: none;
+        }
+    }
+
+
+    .header {
+        @include flex(space-between);
+        padding: 20px;
+
+
+        &__container {
+            text-transform: uppercase;
+            width: 450px;
+        }
+
+        &__title--headline {
+            font-size: 4.6rem;
+        }
+
+        &__title--subline {
+            font-size: 2rem;
+        }
+    }
+
+    .main {
+        flex-direction: column;
+
+        .info-form {
+            min-height: 282px;
+            order: 2;
+            margin-bottom: 60px;
+        }
+
+        .main__image {
+            width: 230px;
+            padding: 0;
+            z-index: 1;
+            padding-bottom: 20px;
+            margin: 0 auto;
+            order: 1;
+        }
+    }
+
+
+}
+
+@media (max-width: 576px) {
+    .header {
+        &__container {
+            width: 250px;
+        }
+
+        &__title--headline {
+            line-height: 38px;
+        }
+
+        &__paragraph {
+            font-size: 1.1rem;
+            padding-top: 5px;
+        }
+    }
+
+    .main {
+        &__image {
+            height: 250px;
+        }
+
+        .info-form:after {
+            font-size: 1.6rem;
+            top: -15px;
+            left: 15px;
+        }
+
+        .info-form {
+            padding: 10px;
+            padding-top: 20px;
+            height: 500px;
+            flex-direction: column;
+
+            &__input,
+            &__container {
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            .checkboxes {
+                flex-direction: column;
+            }
+        }
+    }
+
+    .footer {
+        &__paragraph {
+            font-size: 1rem;
+            right: 5px;
+        }
+
+        &__span {
+            font-size: 1.2rem;
+        }
+    }
+}
